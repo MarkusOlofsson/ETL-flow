@@ -1,0 +1,19 @@
+För min kostanalys så kan jag se att 62% av kostnaderna hamnar under "storage", det beror på att jag har lagrat data i både SQL och StorageAccounts,
+jag valde att använda minimalt med data för att spara mitt studentsaldo men går ändå att visualisera så det spelar ingen roll. 
+Resterande % är 32% på Virtual Network som rör saker jag kört i min virtuella maskin och när jag haft den igång, t.ex för att kunna ha min
+Grafana up and running! Så sammanfattningsvis är det svårt att säga hur kostanderna skulle se ut i ett stort flöde, men för mindre projekt verkar 
+lagringskostnaderna och trafiken som flyttar data in och ut vara kostnaderna!
+
+
+--KOSTANALYS, tillhörande bild "kostanalys_kalkyl.png"
+
+Jag gjorde en genomgång av Azures prisberäkningsverktyg för SQL-databaser och noterade några 
+viktiga kostnader. För att kunna hantera 10TB lagring var jag tvungen att välja "Hyperscale" 
+som service-tier. Detta alternativ tillåter databasen att hantera stora dataflöden och överstiga den 
+valda gränsen vid behov, vilket är viktigt för att säkra framtida dataflöden. 
+Enbart Hyperscale-alternativet står för cirka 27 000 kr av den totala kostnaden på 52 000 kr.
+Utöver detta tillkommer kostnaden för automatiserade, kontinuerliga backuper, 
+som ligger runt 10 000 kr. Själva skapandet och underhållet av servern bidrar också till kostnaderna, 
+vilket ger en mer komplett bild av vad en SQL-databas med dessa specifikationer skulle innebära i Azure.
+Sammanfattningsvis är lagring och säkerhetskopiering för backuper två stora kostnadsposter, 
+och det kan vara värt att överväga om Hyperscale verkligen behövs för att optimera kostnaderna på längre sikt.

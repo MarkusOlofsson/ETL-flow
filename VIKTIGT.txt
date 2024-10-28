@@ -1,0 +1,8 @@
+Från början skapade jag ett python skript som heter "consume_and_insert.py" som tar datan från kö och trycker in i sql databasen lokalt för att testa.
+
+Men nu har jag kompletterat med en bild "pipeline.png" som är Logic Apps i Azure som automatiserar detta.
+
+Man kan ställa in den utifrån hur ofta man vill att den ska kolla sin kö, och sedan ta bort kö meddelandet när de är använt. 
+
+Sedan behövde man inte ett skript längre med denna variant, man kopplar bara ihop Parse JSON med Insert row till sql databasen. 
+Då blir min trigger när jag generar data till kö och sedan sköts allt i cloud!
